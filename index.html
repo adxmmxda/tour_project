@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Турагентство - Визитка</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Rammetto+One&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios,arrow_forward_ios,directions_car,navigation,train,travel" />
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<!-- Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Owl Carousel CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      width: 100%;
+      font-family: 'Josefin Sans', sans-serif;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+
+.about .logo {
+  width: 40px;
+  height: 40px;
+  z-index: 9;
+  background-image: url(https://rafaelavlucas.github.io/assets/codepen/logo_white.svg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 10px 7px;
+  opacity: 0.9;
+  transition: all 1s 0.2s ease;
+  bottom: 0;
+  right: 0;
+}
+
+.about .social {
+  opacity: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.about .social .icon {
+  width: 100%;
+  height: 100%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  display: flex;
+  transition: all 0.2s ease, background-color 0.4s ease;
+  opacity: 0;
+  border-radius: 100%;
+}
+
+.about .social.portfolio .icon {
+  background-image: url(https://rafaelavlucas.github.io/assets/codepen/link.svg);
+}
+
+.about .social.dribbble .icon {
+  background-image: url(https://rafaelavlucas.github.io/assets/codepen/dribbble.svg);
+}
+
+.about .social.linkedin .icon {
+  background-image: url(https://rafaelavlucas.github.io/assets/codepen/linkedin.svg);
+}
+
+.about:hover {
+  width: 105px;
+  height: 105px;
+  transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .logo {
+  opacity: 1;
+  transition: all 0.6s ease;
+}
+
+.about:hover .social {
+  opacity: 1;
+}
+
+.about:hover .social .icon {
+  opacity: 0.9;
+}
+
+.about:hover .social:hover {
+  background-size: 28px;
+}
+
+.about:hover .social:hover .icon {
+  background-size: 65%;
+  opacity: 1;
+}
+
+.about:hover .social.portfolio {
+  right: 0;
+  bottom: calc(100% - 40px);
+  transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .social.portfolio .icon:hover {
+  background-color: #698fb7;
+}
+
+.about:hover .social.dribbble {
+  bottom: 45%;
+  right: 45%;
+  transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .social.dribbble .icon:hover {
+  background-color: #ea4c89;
+}
+
+.about:hover .social.linkedin {
+  bottom: 0;
+  right: calc(100% - 40px);
+  transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.about:hover .social.linkedin .icon:hover {
+  background-color: #0077b5;
+}
+
+/* --- main nav --- */
+.mainNav {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9197ae;
+  text-transform: uppercase;
+  padding: 0 40px;
+}
+
+.mainNav__logo {
+width: 25%;
+
+}
+
+.mainNav__links {
+  display: flex;
+}
+
+.mainNav__link {
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-left: 20px;
+  font-weight: 600;
+  box-shadow: inset 0px -10px 0px rgba(255, 255, 255, 0.5);
+  transition: all 0.4s ease, transform 0.2s ease;
+  padding: 2px 4px;
+  transform: translateY(0px);
+}
+
+.mainNav__link:hover {
+  transform: translateY(-5px);
+  box-shadow: inset 0px -20px 0px white;
+}
+
+.mainNav__icon {
+  background-image: url(https://rafaelalucas91.github.io/assets/icons/black/icon-141.svg);
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+}
+
+@media screen and (max-width: 799px) {
+  .mainNav {
+    padding: 0 20px;
+  }
+  .mainNav__links {
+    display: none;
+  }
+  .mainNav__icon {
+    display: block;
+  }
+}
+
+/* --- heading --- */
+.mainHeading {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0 40px;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+
+.mainHeading__content {
+  max-width: 1110px;
+  min-height: 600px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.mainHeading__text {
+  z-index: 1;
+  color: #637498;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  max-width: 620px;
+  margin-top: 100px;
+  width: 70%;
+  backdrop-filter: blur(8px);
+  animation: text 0.8s 0.6s ease backwards;
+  position: relative;
+}
+
+.mainHeading__text:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: 0;
+  left: 0;
+  animation: line 0.8s 0.6s ease backwards;
+}
+
+@keyframes line {
+  0% {
+    right: 0;
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes text {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+}
+
+.mainHeading__preTitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  color: #637498;
+}
+
+.mainHeading__title {
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  font-size: 40px;
+  color: #637498;
+}
+
+.mainHeading__description {
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.mainHeading__image {
+  right: 0;
+  max-width: 600px;
+  width: 60%;
+  height: 600px;
+  transform: translateY(100px);
+  position: absolute;
+  overflow: hidden;
+  animation: image 0.6s 0.2s ease backwards;
+}
+
+@keyframes image {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+}
+
+.mainHeading__image:before,
+.mainHeading__image:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  top: 100%;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  opacity: 1;
+  left: 0;
+}
+
+.mainHeading__image:before {
+  animation: imageBefore 1s 0.2s ease backwards;
+}
+
+@keyframes imageBefore {
+  0% {
+    height: 100%;
+    top: 0;
+  }
+}
+
+.mainHeading__image:after {
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  height: 100%;
+  top: 0;
+  opacity: 0.2;
+}
+
+.mainHeading__image img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 799px) {
+  .mainHeading {
+    padding: 0 20px;
+  }
+  .mainHeading__content {
+    min-height: 500px;
+  }
+  .mainHeading__text {
+    padding: 20px;
+    margin: 90px 0 40px 0;
+  }
+  .mainHeading__title {
+    margin-bottom: 16px;
+    font-size: 28px;
+  }
+  .mainHeading__description {
+    font-size: 14px;
+  }
+  .mainHeading__image {
+    height: 480px;
+    width: 70%;
+    transform: translateY(80px);
+    right: -6%;
+  }
+}
+
+/* --- cta button --- */
+.cta {
+  padding: 16px 32px;
+  color: #637498;
+  background-color: transparent;
+  border: 1px solid rgba(99, 116, 152, 0.4);
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-top: 32px;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 0px rgba(99, 116, 152, 0.2);
+  transition: all 0.4s ease;
+}
+
+.cta:hover {
+  border: 1px solid rgba(99, 116, 152, 0.1);
+  box-shadow: inset 0px -80px 0px rgba(99, 116, 152, 0.1);
+  transform: translateY(-5px);
+}
+
+@media screen and (max-width: 799px) {
+  .cta {
+    margin-top: 16px;
+  }
+}
+  /* .slider {
+    width: 100%;
+    max-width: 900px;
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+ 
+    background: #000;
+  }
+
+  .slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .caption {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: #fff;
+    text-align: left;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .slide.active .caption {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.7s;
+  }
+
+  .caption h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .caption p {
+    margin: 6px 0 0;
+    font-size: 16px;
+    font-weight: 300;
+  } */
+/* TODO: COUNTERS BROKEN */
+
+:root {
+  --body-padding: 2rem;
+  --card-width: 300px;
+}
+
+.carousel {
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow: column;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  anchor-name: --trip-carousel;
+  counter-reset: day;
+  
+  /*  "break out" of body padding  */
+  width: 100dvw;
+  margin-left: calc(-1 * var(--body-padding));
+  
+  /*  hide scrollbar  */
+  scrollbar-width: none;
+  
+  /*  smooth scrolling  */
+  scroll-behavior: smooth;
+  
+  /*  add prev/next buttons  */
+   &::scroll-button(left) {
+    /* content: "arrow_back_ios" / "Scroll Left"; */
+    position-area: left;
+    padding-left: 0.75rem;
+    transform: translateX(calc(2 * var(--body-padding)));
+  }
+
+  &::scroll-button(right) {
+    /* content: "arrow_forward_ios" / "Scroll Right"; */
+    position-area: right;
+    transform: translateX(calc(-2 * var(--body-padding)));
+  }
+  
+  &::scroll-button(*) {
+    position: absolute;
+
+    z-index: 1;
+    font-size: 1.5rem;
+    font-family: "Material Symbols Outlined";
+    font-variation-settings: "wght" 100;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    color: white;
+    aspect-ratio: 1 / 1;
+    border: 2px solid dimgray;
+    background: white;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: font-variation-settings 0.25s ease, scale 0.25s ease;
+    background: #333;
+  }
+  
+  &::scroll-button(*):disabled {
+    border: 2px solid blackgray;
+    color: gray;
+  } 
+  
+  &::scroll-button(*):not(:disabled):hover {
+    font-variation-settings: "wght" 400;
+    scale: 1.05;
+  }
+
+  &::scroll-button(*):focus-visible {
+    outline-offset: 5px;
+  }
+  
+  /*  scroll markers  */
+  scroll-marker-group: after;
+  
+  &::scroll-marker-group {
+    position: fixed;
+    position-anchor: --trip-carousel;
+    position-area: bottom;
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  /*  This doesn't work but it would be cool if it did  -- idea placeholder */
+  /*   &::scroll-marker-group::before {
+    content: 'Day: ';
+    display: block;
+  } */
+  
+  li::scroll-marker {
+    content: counter(day-num);
+    aspect-ratio: 1 / 1;
+    width: 1rem;
+    background: #444;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+    color: white;
+    border-radius: 100%;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  
+  li::scroll-marker:target-current {
+    anchor-name: --active-target;
+    transform: translateY(-0.5rem);
+  }
+  
+  /*  Move first item over a bit  */
+  li:first-child {
+    margin-left: 5rem;
+  }
+}
+
+#week-2 {
+  position: absolute;
+  right: calc(-100dvw + var(--card-width));
+  visibility: hidden;
+}
+
+.day-card {
+  width: var(--card-width);
+  position: relative;
+  overflow: hidden;
+  counter-increment: day-num;
+  scroll-snap-align: center;
+  container-type: scroll-state;
+  
+  img {
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  
+  &:hover,
+  &:focus {
+    .meta {
+      transform: translateY(0);
+    }
+  }
+  
+  .meta {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 2rem);
+    transform: translateY(calc(100% - 3rem));
+    background: #333;
+    color: white;
+    padding: 1rem;
+    transition: transform 0.5s ease;
+    
+    @container scroll-state(snapped: x) {
+      transform: translateY(0);
+    }
+  }
+  
+  .desc {
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  &::before {
+    counter-increment: day;
+    /* content: "Day " counter(day); */
+    font-size: 0.8rem;
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    background: #222;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0 .75rem .75rem 0;
+  }
+}
+
+.flight,
+.train,
+.car {
+  &::after {
+    content: '';
+    position: absolute;
+    font-family: "Material Symbols Outlined";
+    font-size: 1.25rem;
+    font-family: "Material Symbols Outlined";
+    font-variation-settings: "wght" 100;
+    color: white;
+    background: #222;
+    border-radius: 100% 0 0 100%;
+    top: 0.5rem;
+    right: 0;
+    padding: 0.25rem;
+  }
+}
+
+.flight::after {
+  content: "travel" / "Flight";
+}
+
+.train::after {
+  content: "train" / "Train";
+}
+
+.car::after {
+  content: "directions_car" / "Car";
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 2;
+}
+
+img {
+  width: 100%;
+}
+
+
+
+.action-bar {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+  display: flex;
+  gap: 1rem;
+  
+  a {
+    border-bottom: 3px solid;
+    text-decoration: none;
+    padding-bottom: 0.25rem;
+    border-color: dimgray;
+    color: white;
+  } 
+}
+
+.plane2 {
+  position: fixed;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  position-anchor: --active-target;
+  inset: anchor(inside);
+  margin-top: anchor-size();
+  transition: inset 0.5s linear;
+  
+  &::after {
+    font-size: 1.25rem;
+    font-family: "Material Symbols Outlined";
+    content: "navigation";
+  }
+}
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .btn {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin: 0 15px;
+  }
+
+  .btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+  }    
+    .contact-page-sec {
+      padding: 0px 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-info-item {
+      background: #ffffff; /* белая карточка */
+      border-radius: 20px;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+      transition: all 0.4s ease-in-out;
+    }
+
+    .contact-info-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-info-icon i {
+      font-size: 50px;
+      color: #fbbf24; /* золотой акцент */
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-info-item:hover .contact-info-icon i {
+      transform: scale(1.2);
+      color: #f59e0b; /* тёплый акцент при hover */
+    }
+
+    .contact-info-text h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      color: #1e293b;
+      letter-spacing: 1px;
+    }
+
+    .contact-info-text span {
+      display: block;
+      color: #64748b;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    /* FOOTER */
+   .footer-dark {
+      padding: 50px 0;
+      color: #f0f9ff;
+      background: linear-gradient(135deg, #3a3f47, #4b525a);
+    }
+
+    .footer-dark h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .footer-dark ul {
+      padding: 0;
+      list-style: none;
+      line-height: 1.6;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .footer-dark ul a {
+      color: inherit;
+      text-decoration: none;
+      opacity: 0.6;
+    }
+
+    .footer-dark ul a:hover {
+      opacity: 0.9;
+    }
+
+    .footer-dark .item.text {
+      margin-bottom: 36px;
+    }
+
+    .footer-dark .item.text p {
+      opacity: 0.8;
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    .footer-dark .item.social {
+      text-align: center;
+    }
+
+    .footer-dark .item.social>a {
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+      margin: 0 8px;
+      color: #fff;
+      opacity: 0.85;
+    }
+
+    .footer-dark .item.social>a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      opacity: 1;
+    }
+
+    .footer-dark .copyright {
+      text-align: center;
+      padding-top: 24px;
+      opacity: 0.4;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    @media (max-width:767px) {
+      .footer-dark .item:not(.social) {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+    }
+
+    /* Адаптив */
+    @media(max-width: 900px) {
+      .spectacledcoder-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+      .header-nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .spectacledcoder-footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .spectacledcoder-footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+  /* ================ variables & reset ================ */
+  :root{
+    --surface: #f6f9fb;
+    --card: #ffffff;
+    --text: #12202b;
+    --muted: #55707f;
+    --accent-a: #4fc08d; /* green */
+    --accent-b: #2c9cd4; /* blue */
+    --glass: rgba(255,255,255,0.6);
+    --radius: 20px;
+    --shadow: 0 12px 30px rgba(13, 38, 59, 0.08);
+    --fw-heading: 800;
+    --fw-regular: 400;
+    --max-width: 1200px;
+  }
+
+  /* small reset for the block */
+  .about-section,
+  .about-text,
+  .about-img,
+  .plane-center { box-sizing: border-box; }
+
+  /* ================ layout ================ */
+  .about-section{
+    max-width: var(--max-width);
+    margin: 64px auto;
+    padding: 36px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 28px;
+    align-items: center;
+
+    border-radius: calc(var(--radius) + 4px);
+
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  /* ================ text column ================ */
+  .about-text { padding: 8px 6px; }
+  .about-text h2{
+    margin: 0 0 14px;
+    color: var(--text);
+    font-weight: var(--fw-heading);
+    font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    position: relative;
+  }
+  .about-text h2::after{
+    content: "";
+    display: block;
+    width: 72px;
+    height: 4px;
+    border-radius: 3px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  }
+  .about-text p{
+    margin: 18px 0 22px;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 46ch;
+  }
+
+  /* CTA */
+  .about-cta{
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+    color: white;
+    padding: 12px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(44,156,212,0.14);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .about-cta:focus,
+  .about-cta:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(44,156,212,0.18);
+    outline: none;
+  }
+  .about-cta:focus { box-shadow: 0 0 0 4px rgba(79,192,141,0.14); }
+
+  /* ================ plane center ================ */
+  .plane-center {
+    width: 140px;
+    height: 140px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  /* decorative flight path */
+  .flight-path{
+    position: absolute;
+    width: 110%;
+    height: 18px;
+    left: 50%;
+    top: 50%;
+
+    border-radius: 999px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    overflow: visible;
+  }
+  /* dashed stroke effect */
+  .flight-path::before{
+    content: "";
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    top: 50%;
+    height: 2px;
+    transform: translateY(-50%);
+    background-image: linear-gradient(90deg, rgba(255,255,255,0.4) 0 25%, transparent 25% 50%);
+    background-size: 12px 2px;
+    opacity: 0.95;
+  }
+
+  /* svg plane */
+  .plane{
+    color: var(--accent-b);
+    width: 44px;
+    height: 44px;
+    display: block;
+    z-index: 3;
+    filter: drop-shadow(0 6px 14px rgba(44,156,212,0.12));
+    transform-origin: center;
+    animation: plane-flight 3.6s cubic-bezier(.22,.9,.36,1) infinite;
+  }
+
+  /* plane motion — subtle horizontal + vertical + rotation so it "flies" along path */
+  @keyframes plane-flight{
+    0%   { transform: translate(-18px, 0) rotate(-6deg) scale(1); opacity: 0.95; }
+    25%  { transform: translate(6px, -8px) rotate(8deg) scale(1.03); opacity: 1; }
+    50%  { transform: translate(28px, 0px) rotate(-4deg) scale(1); opacity: 0.95; }
+    75%  { transform: translate(6px, -6px) rotate(6deg) scale(1.02); opacity: 1; }
+    100% { transform: translate(-18px, 0) rotate(-6deg) scale(1); opacity: 0.95; }
+  }
+
+  /* ================ image column ================ */
+  .about-img{
+    display: grid;
+    place-items: center;
+    padding: 6px;
+  }
+  .about-img img{
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 18px 42px rgba(10,30,50,0.10);
+    transition: transform .45s cubic-bezier(.2,.9,.4,1), box-shadow .3s ease;
+    display: block;
+    background: linear-gradient(180deg, #e9f7ff, #fff);
+  }
+  .about-img img:hover{
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 28px 60px rgba(10,30,50,0.14);
+  }
+
+  /* ================ accessibility helpers ================ */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+  }
+
+  /* ================ responsive ================ */
+  @media (max-width: 980px){
+    .about-section { gap: 22px; padding: 28px; }
+    .flight-path { width: 140%; }
+    .about-text p { max-width: 52ch; }
+  }
+
+  @media (max-width: 820px){
+    .about-section {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding: 26px;
+    }
+    .plane-center { order: 2; margin: 8px 0 14px; }
+    .about-img { order: 3; margin-top: 6px; }
+    .about-text { order: 1; }
+    .about-text h2::after { left: 50%; transform: translateX(-50%); }
+  }
+
+  /* respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce){
+    .plane { animation: none; transform: translate(0,0) rotate(0); }
+    .about-img img, .about-cta { transition: none; }
+    .flight-path::before { background-size: 8px 2px; }
+  }
+.section-title {
+  font-family: 'Inter', sans-serif; /* тот же шрифт */
+  font-weight: 800;                  /* жирность как в "О нас" */
+  font-size: 2.5rem;                 /* можно подкорректировать под дизайн */
+  color: #111;                        /* основной цвет текста */
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+/* Черточка под заголовком */
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 25%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #4fc08d;
+  border-radius: 2px;
+}
+:root{
+           /* page dark base */
+  --bg-2: #071124;           /* accent darker */
+  --card-glass: rgba(255,255,255,0.06);
+  --accent: #FF7B54;         /* primary accent */
+  --accent-2: #3AC4FF;       /* secondary accent */
+  --muted: #9aa7b2;
+  --max-w: 1200px;
+  --radius: 18px;
+  --gap: 56px;
+}
+
+.offers {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header */
+.offers .heading {
+  text-align:center;
+  margin-bottom: 28px;
+}
+.offers h1{
+  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+  margin-top: 20%;
+  letter-spacing: -0.02em;
+  font-weight:800;
+  color: #000000;
+}
+.offers .sub {
+  color: var(--muted);
+  margin-top:10px;
+  font-weight:500;
+}
+
+/* underline */
+.offers h1::after{
+  content: "";
+  display:block;
+  width:72px;
+  height:4px;
+  margin:14px auto 0;
+  border-radius:4px;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+
+/* Zigzag grid */
+.zigzag {
+  display: grid;
+  gap: var(--gap);
+  margin-top: 40px;
+  align-items: center;
+  position: relative;
+  padding: 28px 8px;
+}
+
+/* item */
+.zigzag-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 28px;
+  position: relative;
+  overflow: visible;
+  counter-increment: offer;
+  transform: translateY(24px);
+
+  transition: transform 0.7s cubic-bezier(.2,.9,.25,1);
+}
+
+/* visible state */
+.zigzag-item.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* alternate */
+.zigzag-item:nth-child(even){
+  direction: rtl; /* visually swap columns */
+}
+.zigzag-item:nth-child(even) .content-zigzag { direction: ltr; }
+
+/* media column */
+.media {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 300px;
+  box-shadow: 0 12px 20px rgba(2,8,23,0.55), inset 0 1px 0 rgba(255,255,255,0.02);
+  transform-origin: center;
+}
+
+/* parallax image */
+.media img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: transform 0.8s cubic-bezier(.2,.9,.25,1);
+  will-change: transform;
+  transform: translateY(0) scale(1);
+  backface-visibility: hidden;
+}
+
+/* decorative overlay pattern on image */
+.media::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.03) 0, transparent 10%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 8px);
+  mix-blend-mode: overlay;
+  pointer-events:none;
+}
+
+/* glass content */
+.content-zigzag{
+  position: relative;
+  padding: clamp(20px, 2.6vw, 36px);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 6px 24px rgba(134, 134, 134, 0.45);
+}
+
+/* small badge number */
+.content-zigzag .badge {
+  font-size: 0.8rem;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  background: rgb(109, 110, 110);
+  color: var(--muted);
+  margin-bottom:12px;
+}
+
+/* title & desc */
+.content-zigzag h3 {
+  margin: 0 0 12px 0;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: #000000;
+  font-weight:700;
+  letter-spacing: -0.02em;
+}
+.content-zigzag p {
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  line-height:1.6;
+  font-weight:500;
+}
+
+/* icon + title row */
+.head-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* SVG icon container */
+.icon {
+  width:44px; height:44px; flex: 0 0 44px;
+  border-radius:10px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, rgba(11, 7, 53, 0.03), rgba(255,255,255,0.01));
+  box-shadow: 0 6px 18px rgba(2,8,23,0.35);
+}
+
+/* CTA */
+.btn {
+  display:inline-block;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color: white; font-weight:700;
+  cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(255,123,84,0.18); }
+
+/* tiny accent line */
+.content-zigzag .line {
+  width:48px; height:4px; border-radius:4px;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  margin-top:10px;
+}
+.content-zigzag::after{
+  content:"";
+  position:absolute;
+  right:-60px;
+  top:-40px;
+  width:140px;height:140px;
+  background: radial-gradient(circle at 30% 30%, rgba(58,196,255,0.06), transparent 30%);
+  transform: rotate(14deg);
+  pointer-events:none;
+  opacity:0.9;
+}
+
+/* decorative corners / patterns on content */
+.content-zigzag{
+  position: relative;
+  padding: clamp(20px, 2.6vw, 36px);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 6px 24px rgba(134, 134, 134, 0.45);
+}
+
+/* mobile: convert to horizontal swipeable scroll with snap */
+@media (max-width: 880px){
+  .zigzag { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; }
+  .zigzag-item { min-width: 86%; scroll-snap-align:center; grid-template-columns: 1fr; gap:18px; }
+  .zigzag-item:nth-child(even){ direction:ltr; }
+
+  .media{ min-height: 260px; }
+}
+
+/* pagination dots for mobile */
+.dots {
+  display:flex; gap:10px; justify-content:center; margin-top:16px;
+}
+.dot {
+  width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.12);cursor:pointer;transition:transform .18s, background .18s;
+}
+.dot.active { background: linear-gradient(90deg,var(--accent),var(--accent-2)); transform: scale(1.25); box-shadow: 0 8px 18px rgba(58,196,255,0.08); }
+
+/* airplane */
+.airplane {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 8%;
+  top: 8%;
+  z-index: 40;
+  pointer-events: none;
+  transform: translate(-50%,-50%) rotate(-15deg);
+  transition: transform 0.9s cubic-bezier(.2,.9,.25,1), left 0.9s ease, top .9s ease;
+  opacity: 0.95;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+.airplane svg { width:100%; height:100%; display:block; }
+
+/* reveal subtle hover lift for desktop image */
+@media (hover:hover){
+  .media:hover img { transform: scale(1.03) translateY(-6px); }
+  .media:active img { transform: scale(0.99); }
+}
+
+/* accessibility helpers */
+.sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;}
+
+  </style>
+</head>
+<body>
+  <link href='https://images.unsplash.com/photo-1507525428034-b723cf961d3e' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- HEADER -->
+<div class="about">
+   <a class="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
+      <span class="icon"></span>
+   </a>
+   <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
+      <span class="icon"></span>
+   </a>
+   <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
+      <span class="icon"></span>
+   </a>
+   <a class="bg_links logo"></a>
+</div>
+<!-- end about -->
+
+<nav class="mainNav">
+<div class="mainNav__logo">
+  <img src="C:/Users/akram/Desktop/tourProject/без фона.png" alt="SitoraTours" />
+</div>
+   <div class="mainNav__links">
+      <a href="" class="mainNav__link">About</a>
+      <a href="" class="mainNav__link">Projects</a>
+      <a href="" class="mainNav__link">Team</a>
+      <a href="" class="mainNav__link">Contacts</a>
+   </div>
+   <div class="mainNav__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+         <g data-name="Layer 2" fill="#9197AE">
+            <g data-name="menu-2">
+               <rect
+                  width="24"
+                  height="24"
+                  transform="rotate(180 12 12)"
+                  opacity="0"
+               />
+               <circle cx="4" cy="12" r="1" />
+               <rect x="7" y="11" width="14" height="2" rx=".94" ry=".94" />
+               <rect x="3" y="16" width="18" height="2" rx=".94" ry=".94" />
+               <rect x="3" y="6" width="18" height="2" rx=".94" ry=".94" />
+            </g>
+         </g>
+      </svg>
+   </div>
+</nav>
+<header class="mainHeading">
+   <div class="mainHeading__content">
+      <article class="mainHeading__text">
+         <p class="mainHeading__preTitle">nature</p>
+         <h2 class="mainHeading__title">behind the mountains</h2>
+         <p class="mainHeading__description">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts.
+         </p>
+         <button class="cta">know more</button>
+      </article>
+
+      <figure class="mainHeading__image">
+         <img
+            src="https://images.unsplash.com/photo-1520856707909-75c4048cc858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
+            alt=""
+         />
+      </figure>
+   </div>
+</header>
+
+<!-- О нас -->
+<section class="about-section" aria-labelledby="about-title">
+  <div class="about-text">
+    <h2 id="about-title">О нас</h2>
+    <p>
+      Мы — современное турагентство, которое превращает поездки в истории.
+      Подбираем маршруты под ваш вкус, бережно сопровождаем и отвечаем за
+      комфорт — чтобы каждый отпуск стал событием, которое хочется повторить.
+    </p>
+
+    <a class="about-cta" href="#tours">Узнать туры</a>
+  </div>
+
+  <!-- декор: самолёт между текстом и изображением -->
+  <div class="plane-center" aria-hidden="true">
+    <div class="flight-path" aria-hidden="true"></div>
+
+<!-- SVG самолётик -->
+<svg class="plane" viewBox="0 0 24 24" width="60" height="60" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="planeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4fc08d"/>
+      <stop offset="100%" stop-color="#1a73e8"/>
+    </linearGradient>
+  </defs>
+  <path d="M2.5 19l19-7-19-7v5l13 2-13 2v5z" fill="url(#planeGradient)"/>
+</svg>
+
+  </div>
+
+  <figure class="about-img">
+    <img
+      src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      srcset="
+        https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=640 640w,
+        https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=1024 1024w,
+        https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w
+      "
+      sizes="(max-width:900px) 100vw, 48vw"
+      alt="Путешественники на пляже"
+      loading="lazy">
+    <figcaption class="visually-hidden">Путешественники на пляже</figcaption>
+  </figure>
+</section>
+
+<!-- Туры -->
+ <!-- <section id="tours" class="py-5 text-center">
+<div class="title-wrapper">
+  <h2 class="section-title">О вв</h2>
+</div>
+  </div> -->
+
+  <!--<div class="slider">
+    <div class="slides">
+      <div class="slide active">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Мальдивы">
+        <div class="caption">
+          <h2>Мальдивы</h2>
+          <p>Райский отдых на океанском побережье.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Париж">
+        <div class="caption">
+          <h2>Париж</h2>
+          <p>Романтика и культура Франции ждут вас.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="Бали">
+        <div class="caption">
+          <h2>Бали</h2>
+          <p>Экзотика, серфинг и уникальная природа.</p>
+        </div>
+      </div>
+    </div> -->
+<h1>Trip overview</h1>
+
+
+<ul class="carousel">
+  <li class="day-card ">
+    <a id="week-1">
+    <img src="C:/Users/akram/Desktop/tourProject/ahmed-shabana-ADa9bb3tqR4-unsplash.jpg" alt="Egypt">
+    <div class="meta">
+      <h2 class="location">Египет</h2>
+      <p class="desc">
+        Страна пирамид, Нила и древних храмов.
+      </p>
+    </div>
+    </a>
+  </li>
+  <li class="day-card">
+    <img src="C:/Users/akram/Desktop/tourProject/deepak-siva-s-EdeK-fo0s-unsplash.jpg" alt="Qatar">
+    <div class="meta">
+      <h2 class="location">Катар</h2>
+      <p class="desc">Роскошь и традиции в сердце пустыни.</p>
+    </div>
+  </li>
+  <li class="day-card ">
+    <img src="C:/Users/akram/Desktop/tourProject/christoph-schulz-7tb-b37yHx4-unsplash.jpg" alt="Dubai">
+    <div class="meta">
+      <h2 class="location">Дубай</h2>
+      <p class="desc">Небоскрёбы, пустыня и роскошный отдых.</p>
+    </div>
+  </li>
+  <li class="day-card ">
+    <img src="C:/Users/akram/Desktop/tourProject/engin-yapici-WA1u0scVLZU-unsplash.jpg" alt="Turkey">
+    <div class="meta">
+      <h2 class="location">Турция</h2>
+      <p class="desc">Мост Европы и Азии с богатой историей.</p>
+    </div>
+  </li> 
+  <li class="day-card"> 
+    <img src="C:/Users/akram/Desktop/tourProject/rayyu-maldives-xPsFXsbXJRg-unsplash.jpg" alt="Maldivies">
+    <div class="meta">
+      <h2 class="location">Мальдивы</h2>
+      <p class="desc">Белые пляжи и коралловые рифы.</p>
+    </div>
+  </li>
+  <li class="day-card ">
+    <img src="C:/Users/akram/Desktop/tourProject/jb-3VK6Urf2vE8-unsplash.jpg" alt="vietnam">
+    <div class="meta">
+      <h2 class="location">Вьетнам</h2>
+      <p class="desc">Джунгли, рисовые поля и древние города.</p>
+    </div>
+  </li>
+  <li class="day-card ">
+    <img src="C:/Users/akram/Desktop/tourProject/sebastian-pichler-m2U9C875LJQ-unsplash.jpg" alt="Tailand">
+    <div class="meta">
+      <h2 class="location">Тайланд</h2>
+      <p class="desc">Тропические острова и буддийские храмы.</p>
+    </div>
+  </li>
+  <li class="day-card ">
+    <a id="week-2"></a>
+      <img src="C:/Users/akram/Desktop/tourProject/denis-arslanbekov-b-eGDk5_gPo-unsplash.jpg" alt="Georgia">
+      <div class="meta">
+        <h2 class="location">Грузия</h2>
+        <p class="desc">Горы, вино и тёплое гостеприимство.</p>
+      </div>
+  </li>
+  <li class="day-card ">
+    <img src="C:/Users/akram/Desktop/tourProject/deepak-siva-s-EdeK-fo0s-unsplash.jpg" alt="Baku">
+    <div class="meta">
+      <h2 class="location">Баку</h2>
+      <p class="desc">Каспий, небоскрёбы и восточный колорит.</p>
+    </div>
+  </li>
+  <li class="day-card ">
+    <img src="C:/Users/akram/Desktop/tourProject/nikita-ivanov-1C2wg9GrPgs-unsplash.jpg" alt="Baykal">
+    <div class="meta">
+      <h2 class="location">Байкал</h2>
+      <p class="desc">Чистейшее и глубокое озеро мира.</p>
+    </div>
+  </li>
+  <li class="day-card ">
+    <img src="C:/Users/akram/Desktop/tourProject/linus-mimietz-4PvblYc2yRI-unsplash.jpg" alt="Sochi">
+    <div class="meta">
+      <h2 class="location">Сочи</h2>
+      <p class="desc">Море и горы в одном курорте.</p>
+    </div>
+  </li>
+</ul>
+
+<div class="plane"></div>
+
+    <!-- <div class="controls">
+      <button class="btn prev">&#10094;</button>
+      <button class="btn next">&#10095;</button>
+    </div>
+  </div> -->
+
+<body>
+<section class="offers " aria-labelledby="offers-title">
+  <div class="heading">
+    <h1 id="offers-title">Наши предложения</h1>
+    <div class="sub">Выбери тип отдыха — мы организуем всё под ключ</div>
+  </div>
+
+  <div class="zigzag" id="zigzag">
+    <!-- Item 1: Пляжный отдых -->
+    <article class="zigzag-item" data-type="beach" data-index="0" aria-label="Пляжный отдых">
+      <div class="media" aria-hidden="true">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop" alt="Пляжный отдых — море и песок">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🌴</span>
+        </div>
+          <div>
+            <div class="badge">Пляж</div>
+            <h3>Пляжный отдых</h3>
+          </div>
+        </div>
+
+        <p>Солнце, море и забота о вашем комфорте: подбор отелей на первой линии, трансферы, развлечения для всех.</p>
+
+
+      </div>
+    </article>
+
+    <!-- Item 2: Экскурсионный -->
+    <article class="zigzag-item" data-type="excursion" data-index="1" aria-label="Экскурсионный отдых">
+      <div class="media">
+        <img src="C:/Users/akram/Desktop/tourProject/photo_2025-09-05_10-17-11.jpg" alt="Экскурсионный отдых — достопримечательности">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🏛️</span>
+        </div>
+          <div>
+            <div class="badge">Экскурсии</div>
+            <h3>Экскурсионный отдых</h3>
+          </div>
+        </div>
+
+        <p>Гиды, маршруты по культовым местам, закрытые экскурсии и удобные логистические решения.</p>
+
+
+      </div>
+    </article>
+
+    <!-- Item 3: Круизы -->
+    <article class="zigzag-item" data-type="cruise" data-index="2" aria-label="Круизы">
+      <div class="media">
+        <img src="C:/Users/akram/Desktop/tourProject/EU1.jpg" alt="Круизы — лайнер">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🛳️</span>
+        </div>
+          <div>
+            <div class="badge">Круизы</div>
+            <h3>Круизы</h3>
+          </div>
+        </div>
+
+        <p>От коротких морских прогулок до круизов по островам — комфорт, развлечения и экскурсии в портах.</p>
+
+
+      </div>
+    </article>
+
+    <!-- Item 4: Семейный отдых -->
+    <article class="zigzag-item" data-type="family" data-index="3" aria-label="Семейный отдых">
+      <div class="media">
+        <img src="C:/Users/akram/Desktop/tourProject/photo_2025-09-05_10-09-38.jpg" alt="Семейный отдых">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">👨‍👩‍👧‍👦</span>
+        </div>
+          <div>
+            <div class="badge">Семья</div>
+            <h3>Семейный отдых</h3>
+          </div>
+        </div>
+
+        <p>Программы для всех возрастов: от детских развлечений до спокойных зон для родителей.</p>
+
+
+      </div>
+    </article>
+
+    <!-- Item 5: Эко и горный -->
+    <article class="zigzag-item" data-type="eco" data-index="4" aria-label="Эко-туризм и горный отдых">
+      <div class="media">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Горы и природа">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🏔️</span>
+        </div>
+          <div>
+            <div class="badge">Эко / Горы</div>
+            <h3>Эко-туризм и горный отдых</h3>
+          </div>
+        </div>
+
+        <p>Трекинг, эко-лагеря, уютные хижины и программы по сохранению природы.</p>
+
+
+      </div>
+    </article>
+
+    <!-- Item 6: Шопинг -->
+    <article class="zigzag-item" data-type="shop" data-index="5" aria-label="Шопинг туризм">
+      <div class="media">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1600&auto=format&fit=crop" alt="Шопинг">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🛍️</span>
+        </div>
+          <div>
+            <div class="badge">Шопинг</div>
+            <h3>Шопинг-туризм</h3>
+          </div>
+        </div>
+
+        <p>Персональные шоп-туры, outlet-пакеты и сопровождение для выгодных и безопасных покупок.</p>
+
+
+      </div>
+    </article>
+  </div>
+
+  <!-- dots for mobile -->
+  <div class="dots" id="dots" aria-hidden="true"></div>
+
+  <!-- Animated airplane -->
+  <div class="airplane" id="airplane" aria-hidden="true">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 30 L62 8 L42 34 L62 56 L2 30 Z" fill="url(#gradPlane)"/>
+      <defs><linearGradient id="gradPlane" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.9"/><stop offset="1" stop-color="#fff" stop-opacity="0.6"/></linearGradient></defs>
+    </svg>
+  </div>
+</section>
+</body>
+
+<!-- Контакты -->
+<section class="contact-page-sec" class="py-5 ">
+  <div class="container">
+    <h2 class="text-center mb-4">Свяжитесь с нами</h2>
+
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-md-4">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="contact-info-text">
+              <h2>Address</h2>
+              <span>1215 Lorem Ipsum, Ch 176080</span> 
+              <span>Chandigarh, India</span> 
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info-text">
+              <h2>Email</h2>
+              <span>info@LoremIpsum.com</span> 
+              <span>yourmail@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-info-text">
+              <h2>Office Time</h2>
+              <span>Mon - Thu  9:00 am - 4:00 pm</span>
+              <span>Fri - Sun  10:00 am - 5:00 pm</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="map col-md-6">
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d389.9107618782794!2d68.78671125007918!3d38.57325908823528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b5d15d65ebfac3%3A0x2a7d408a140f834!2z0KHQu9GD0LbQsdCwINGB0LLRj9C30Lgg0L_RgNC4INCf0YDQsNCy0LjRgtC10LvRjNGB0YLQstC1INCg0LXRgdC_0YPQsdC70LjQutC4INCi0LDQtNC20LjQutC40YHRgtCw0L0!5e0!3m2!1sru!2s!4v1759058292054!5m2!1sru!2s" width="198%" height="500" style="border:0; margin-top: 10%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+  <div class="footer-dark">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- Контакты -->
+          <div class="col-sm-6 col-md-3 item">
+            <h3>📞 Контакты</h3>
+            <ul>
+              <li><a href="tel:+992903018410"><i class="fa-solid fa-phone"></i> +992 903-01-84-10</a></li>
+              <li><a href="mailto:sitoransor@gmail.com"><i class="fa-solid fa-envelope"></i> sitoransor@gmail.com</a></li>
+            </ul>
+          </div>
+          <!-- Офис -->
+          <div class="col-sm-6 col-md-3 item">
+            <h3>📍 Наш офис</h3>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> Душанбе, прос. Рудаки, 55</li>
+              <li><i class="fa-solid fa-clock"></i> Ежедневно с 9:00 до 19:00</li>
+            </ul>
+          </div>
+          <!-- Текст -->
+          <div class="col-md-6 item text">
+            <h3>SitoraTours</h3>
+            <p>Ваши мечты о путешествиях — ближе, чем вы думаете! 🌍  
+              Забронируйте тур уже сегодня и подарите себе новые эмоции ✈️.</p>
+          </div>
+          <!-- Соцсети -->
+          <div class="col item social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/sitoratours?utm_source=qr&igsh=emd1ZGRuYms5NGN2"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/SitoraGazizoda"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+        <p class="copyright">SitoraTours © 2025</p>
+      </div>
+    </footer>
+
+<script>
+
+
+
+
+  const slides = document.querySelectorAll(".slide");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.classList.remove("active");
+      if (idx === i) slide.classList.add("active");
+    });
+    document.querySelector(".slides").style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  next.addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  prev.addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+  $(window).scroll(function() {
+
+    if ($(window).scrollTop() > 100) {
+        $('.main_h').addClass('sticky');
+    } else {
+        $('.main_h').removeClass('sticky');
+    }
+});
+
+
+
+
+var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene);
+
+(function(){
+  const items = Array.from(document.querySelectorAll('.zigzag-item'));
+  const mediaImgs = document.querySelectorAll('.zigzag-item .media img');
+  const zigzag = document.getElementById('zigzag');
+  const dotsWrap = document.getElementById('dots');
+  const airplane = document.getElementById('airplane');
+
+  // IntersectionObserver to add .in-view
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        // move airplane to this item if desktop and center visibility
+        if(window.innerWidth > 880) moveAirplaneTo(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+
+  items.forEach(i => obs.observe(i));
+
+  /* Parallax effect on scroll: adjust image translateY based on element center relative to viewport */
+  function updateParallax(){
+    const viewportCenter = window.innerHeight / 2;
+    mediaImgs.forEach(img => {
+      const rect = img.getBoundingClientRect();
+      const mid = rect.top + rect.height/2;
+      const dist = mid - viewportCenter;
+      // small multiplier
+      const max = 30;
+      const y = Math.max(-max, Math.min(max, -dist * 0.06));
+      img.style.transform = `translateY(${y}px) scale(${1 + Math.abs(y)*0.0008})`;
+    });
+  }
+  window.addEventListener('scroll', throttle(updateParallax, 16));
+  window.addEventListener('resize', updateParallax);
+  updateParallax();
+
+  /* Mobile: build dots for swipe navigation */
+  function buildDots(){
+    dotsWrap.innerHTML = '';
+    if(window.innerWidth > 880) { dotsWrap.style.display='none'; return; }
+    dotsWrap.style.display='flex';
+    items.forEach((it, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'dot' + (idx===0? ' active':'');
+      btn.dataset.index = idx;
+      btn.addEventListener('click', () => {
+        // scroll item into view smoothly
+        it.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+      });
+      dotsWrap.appendChild(btn);
+    });
+  }
+  buildDots();
+  window.addEventListener('resize', debounce(buildDots, 200));
+
+  // Update active dot on scroll
+  const mobileObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting && window.innerWidth <= 880){
+        const idx = Number(e.target.dataset.index || 0);
+        Array.from(dotsWrap.children).forEach((d,i)=> d.classList.toggle('active', i===idx));
+        // also move airplane near center (subtle)
+        moveAirplaneTo(e.target);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  items.forEach(item => mobileObserver.observe(item));
+
+  /* Airplane movement: position near the visible .zigzag-item's media center */
+  function moveAirplaneTo(item){
+    if(!airplane) return;
+    const media = item.querySelector('.media');
+    if(!media) return;
+    const rect = media.getBoundingClientRect();
+    // target coordinates - place plane near top-right corner of media
+    const x = rect.left + rect.width * 0.78;
+    const y = rect.top + rect.height * 0.18;
+    // animate by setting transform translate + rotate
+    airplane.style.left = (x) + 'px';
+    airplane.style.top  = (y) + 'px';
+    airplane.style.opacity = 0.98;
+    // small tilt
+    airplane.style.transform = 'translate(-50%,-50%) rotate(-12deg) scale(1)';
+  }
+
+  // initial airplane placement (center of first item)
+  setTimeout(()=> {
+    if(items[0]) moveAirplaneTo(items[0]);
+  }, 400);
+
+  /* Utility: throttle & debounce */
+  function throttle(fn, wait){ let t=0; return function(...a){ const now=Date.now(); if(now-t>wait){ t=now; fn.apply(this,a); } }; }
+  function debounce(fn, wait){ let t; return function(...a){ clearTimeout(t); t=setTimeout(()=> fn.apply(this,a), wait); }; }
+
+  /* keyboard navigation for desktop */
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+      // find currently most visible item
+      const inView = items.filter(it => it.classList.contains('in-view'));
+      let idx = 0;
+      if(inView.length) idx = Number(inView[0].dataset.index);
+      if(e.key === 'ArrowRight') idx = Math.min(items.length-1, idx+1);
+      if(e.key === 'ArrowLeft') idx = Math.max(0, idx-1);
+      items[idx].scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  });
+
+  /* Accessibility: focus visible when tabbing to buttons inside content */
+  document.querySelectorAll('.btn').forEach(b => {
+    b.addEventListener('focus', (e)=> {
+      const item = b.closest('.zigzag-item');
+      if(item) item.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+
+})();
+
+</script>
+
+
+</body>
+</html>

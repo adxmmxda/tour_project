@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Наши предложения — Zigzag Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+           /* page dark base */
+  --bg-2: #071124;           /* accent darker */
+  --card-glass: rgba(255,255,255,0.06);
+  --accent: #FF7B54;         /* primary accent */
+  --accent-2: #3AC4FF;       /* secondary accent */
+  --muted: #9aa7b2;
+  --max-w: 1200px;
+  --radius: 18px;
+  --gap: 56px;
+}
+
+/* Page background + decorative SVG shapes */
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+body{
+  background: radial-gradient(1200px 800px at 8% 12%, rgba(58,196,255,0.06) 0%, transparent 12%),
+              radial-gradient(900px 600px at 90% 85%, rgba(255,123,84,0.06) 0%, transparent 10%),
+              linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color: #e9f0f5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding: 48px 20px 120px;
+  box-sizing:border-box;
+}
+
+/* Section wrapper */
+.offers {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header */
+.offers .heading {
+  text-align:center;
+  margin-bottom: 28px;
+}
+.offers h1{
+  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+  margin: 0;
+  letter-spacing: -0.02em;
+  font-weight:800;
+  color: #000000;
+}
+.offers .sub {
+  color: var(--muted);
+  margin-top:10px;
+  font-weight:500;
+}
+
+/* underline */
+.offers h1::after{
+  content: "";
+  display:block;
+  width:72px;
+  height:4px;
+  margin:14px auto 0;
+  border-radius:4px;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+
+/* Zigzag grid */
+.zigzag {
+  display: grid;
+  gap: var(--gap);
+  margin-top: 40px;
+  align-items: center;
+  position: relative;
+  padding: 28px 8px;
+}
+
+/* item */
+.zigzag-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 28px;
+  position: relative;
+  overflow: visible;
+  counter-increment: offer;
+  transform: translateY(24px);
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(.2,.9,.25,1), opacity 0.6s ease;
+}
+
+/* visible state */
+.zigzag-item.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* alternate */
+.zigzag-item:nth-child(even){
+  direction: rtl; /* visually swap columns */
+}
+.zigzag-item:nth-child(even) .content-zigzag { direction: ltr; }
+
+/* media column */
+.media {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 300px;
+  box-shadow: 0 12px 20px rgba(2,8,23,0.55), inset 0 1px 0 rgba(255,255,255,0.02);
+  transform-origin: center;
+}
+
+/* parallax image */
+.media img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: transform 0.8s cubic-bezier(.2,.9,.25,1);
+  will-change: transform;
+  transform: translateY(0) scale(1);
+  backface-visibility: hidden;
+}
+
+/* decorative overlay pattern on image */
+.media::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.03) 0, transparent 10%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 8px);
+  mix-blend-mode: overlay;
+  pointer-events:none;
+}
+
+/* glass content */
+.content-zigzag{
+  position: relative;
+  padding: clamp(20px, 2.6vw, 36px);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 6px 24px rgba(134, 134, 134, 0.45);
+}
+
+/* small badge number */
+.content-zigzag .badge {
+  font-size: 0.8rem;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  background: rgb(109, 110, 110);
+  color: var(--muted);
+  margin-bottom:12px;
+}
+
+/* title & desc */
+.content-zigzag h3 {
+  margin: 0 0 12px 0;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: #000000;
+  font-weight:700;
+  letter-spacing: -0.02em;
+}
+.content-zigzag p {
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  line-height:1.6;
+  font-weight:500;
+}
+
+/* icon + title row */
+.head-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* SVG icon container */
+.icon {
+  width:44px; height:44px; flex: 0 0 44px;
+  border-radius:10px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, rgba(11, 7, 53, 0.03), rgba(255,255,255,0.01));
+  box-shadow: 0 6px 18px rgba(2,8,23,0.35);
+}
+
+/* CTA */
+.btn {
+  display:inline-block;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color: white; font-weight:700;
+  cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(255,123,84,0.18); }
+
+/* tiny accent line */
+.content-zigzag .line {
+  width:48px; height:4px; border-radius:4px;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  margin-top:10px;
+}
+
+/* decorative corners / patterns on content */
+.content-zigzag::after{
+  content:"";
+  position:absolute;
+  right:-60px;
+  top:-40px;
+  width:140px;height:140px;
+  background: radial-gradient(circle at 30% 30%, rgba(58,196,255,0.06), transparent 30%);
+  transform: rotate(14deg);
+  pointer-events:none;
+  opacity:0.9;
+}
+
+/* mobile: convert to horizontal swipeable scroll with snap */
+@media (max-width: 880px){
+  .zigzag { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; }
+  .zigzag-item { min-width: 86%; scroll-snap-align:center; grid-template-columns: 1fr; gap:18px; }
+  .zigzag-item:nth-child(even){ direction:ltr; }
+  .content-zigzag{ display:none; }
+  .media{ min-height: 260px; }
+}
+
+/* pagination dots for mobile */
+.dots {
+  display:flex; gap:10px; justify-content:center; margin-top:16px;
+}
+.dot {
+  width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.12);cursor:pointer;transition:transform .18s, background .18s;
+}
+.dot.active { background: linear-gradient(90deg,var(--accent),var(--accent-2)); transform: scale(1.25); box-shadow: 0 8px 18px rgba(58,196,255,0.08); }
+
+/* airplane */
+.airplane {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 8%;
+  top: 8%;
+  z-index: 40;
+  pointer-events: none;
+  transform: translate(-50%,-50%) rotate(-15deg);
+  transition: transform 0.9s cubic-bezier(.2,.9,.25,1), left 0.9s ease, top .9s ease;
+  opacity: 0.95;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+.airplane svg { width:100%; height:100%; display:block; }
+
+/* reveal subtle hover lift for desktop image */
+@media (hover:hover){
+  .media:hover img { transform: scale(1.03) translateY(-6px); }
+  .media:active img { transform: scale(0.99); }
+}
+
+/* accessibility helpers */
+.sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<section class="offers" aria-labelledby="offers-title">
+  <div class="heading">
+    <h1 id="offers-title">Наши предложения</h1>
+    <div class="sub">Выбери тип отдыха — мы организуем всё под ключ</div>
+  </div>
+
+  <div class="zigzag" id="zigzag">
+    <!-- Item 1: Пляжный отдых -->
+    <article class="zigzag-item" data-type="beach" data-index="0" aria-label="Пляжный отдых">
+      <div class="media" aria-hidden="true">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop" alt="Пляжный отдых — море и песок">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🌴</span>
+        </div>
+          <div>
+            <div class="badge">Пляж</div>
+            <h3>Пляжный отдых</h3>
+          </div>
+        </div>
+
+        <p>Солнце, море и забота о вашем комфорте: подбор отелей на первой линии, трансферы, развлечения для всех.</p>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <button class="btn" aria-label="Узнать больше про пляжные туры">Подробнее</button>
+          <div class="line" aria-hidden="true"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Item 2: Экскурсионный -->
+    <article class="zigzag-item" data-type="excursion" data-index="1" aria-label="Экскурсионный отдых">
+      <div class="media">
+        <img src="C:/Users/akram/Desktop/tourProject/photo_2025-09-05_10-17-11.jpg" alt="Экскурсионный отдых — достопримечательности">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🏛️</span>
+        </div>
+          <div>
+            <div class="badge">Экскурсии</div>
+            <h3>Экскурсионный отдых</h3>
+          </div>
+        </div>
+
+        <p>Гиды, маршруты по культовым местам, закрытые экскурсии и удобные логистические решения.</p>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <button class="btn">Подробнее</button>
+          <div class="line"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Item 3: Круизы -->
+    <article class="zigzag-item" data-type="cruise" data-index="2" aria-label="Круизы">
+      <div class="media">
+        <img src="C:/Users/akram/Desktop/tourProject/EU1.jpg" alt="Круизы — лайнер">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🛳️</span>
+        </div>
+          <div>
+            <div class="badge">Круизы</div>
+            <h3>Круизы</h3>
+          </div>
+        </div>
+
+        <p>От коротких морских прогулок до круизов по островам — комфорт, развлечения и экскурсии в портах.</p>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <button class="btn">Подробнее</button>
+          <div class="line"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Item 4: Семейный отдых -->
+    <article class="zigzag-item" data-type="family" data-index="3" aria-label="Семейный отдых">
+      <div class="media">
+        <img src="C:/Users/akram/Desktop/tourProject/photo_2025-09-05_10-09-38.jpg" alt="Семейный отдых">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">👨‍👩‍👧‍👦</span>
+        </div>
+          <div>
+            <div class="badge">Семья</div>
+            <h3>Семейный отдых</h3>
+          </div>
+        </div>
+
+        <p>Программы для всех возрастов: от детских развлечений до спокойных зон для родителей.</p>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <button class="btn">Подробнее</button>
+          <div class="line"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Item 5: Эко и горный -->
+    <article class="zigzag-item" data-type="eco" data-index="4" aria-label="Эко-туризм и горный отдых">
+      <div class="media">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Горы и природа">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🏔️</span>
+        </div>
+          <div>
+            <div class="badge">Эко / Горы</div>
+            <h3>Эко-туризм и горный отдых</h3>
+          </div>
+        </div>
+
+        <p>Трекинг, эко-лагеря, уютные хижины и программы по сохранению природы.</p>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <button class="btn">Подробнее</button>
+          <div class="line"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Item 6: Шопинг -->
+    <article class="zigzag-item" data-type="shop" data-index="5" aria-label="Шопинг туризм">
+      <div class="media">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1600&auto=format&fit=crop" alt="Шопинг">
+      </div>
+
+      <div class="content-zigzag">
+        <div class="head-row">
+        <div class="icon" aria-hidden="true">
+          <span style="font-size:1.4rem;">🛍️</span>
+        </div>
+          <div>
+            <div class="badge">Шопинг</div>
+            <h3>Шопинг-туризм</h3>
+          </div>
+        </div>
+
+        <p>Персональные шоп-туры, outlet-пакеты и сопровождение для выгодных и безопасных покупок.</p>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <button class="btn">Подробнее</button>
+          <div class="line"></div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- dots for mobile -->
+  <div class="dots" id="dots" aria-hidden="true"></div>
+
+  <!-- Animated airplane -->
+  <div class="airplane" id="airplane" aria-hidden="true">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 30 L62 8 L42 34 L62 56 L2 30 Z" fill="url(#gradPlane)"/>
+      <defs><linearGradient id="gradPlane" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.9"/><stop offset="1" stop-color="#fff" stop-opacity="0.6"/></linearGradient></defs>
+    </svg>
+  </div>
+</section>
+
+<script>
+/* ==========================
+   JS: Reveal, Parallax, Dots, Airplane
+   ========================== */
+
+(function(){
+  const items = Array.from(document.querySelectorAll('.zigzag-item'));
+  const mediaImgs = document.querySelectorAll('.zigzag-item .media img');
+  const zigzag = document.getElementById('zigzag');
+  const dotsWrap = document.getElementById('dots');
+  const airplane = document.getElementById('airplane');
+
+  // IntersectionObserver to add .in-view
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        // move airplane to this item if desktop and center visibility
+        if(window.innerWidth > 880) moveAirplaneTo(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+
+  items.forEach(i => obs.observe(i));
+
+  /* Parallax effect on scroll: adjust image translateY based on element center relative to viewport */
+  function updateParallax(){
+    const viewportCenter = window.innerHeight / 2;
+    mediaImgs.forEach(img => {
+      const rect = img.getBoundingClientRect();
+      const mid = rect.top + rect.height/2;
+      const dist = mid - viewportCenter;
+      // small multiplier
+      const max = 30;
+      const y = Math.max(-max, Math.min(max, -dist * 0.06));
+      img.style.transform = `translateY(${y}px) scale(${1 + Math.abs(y)*0.0008})`;
+    });
+  }
+  window.addEventListener('scroll', throttle(updateParallax, 16));
+  window.addEventListener('resize', updateParallax);
+  updateParallax();
+
+  /* Mobile: build dots for swipe navigation */
+  function buildDots(){
+    dotsWrap.innerHTML = '';
+    if(window.innerWidth > 880) { dotsWrap.style.display='none'; return; }
+    dotsWrap.style.display='flex';
+    items.forEach((it, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'dot' + (idx===0? ' active':'');
+      btn.dataset.index = idx;
+      btn.addEventListener('click', () => {
+        // scroll item into view smoothly
+        it.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+      });
+      dotsWrap.appendChild(btn);
+    });
+  }
+  buildDots();
+  window.addEventListener('resize', debounce(buildDots, 200));
+
+  // Update active dot on scroll
+  const mobileObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting && window.innerWidth <= 880){
+        const idx = Number(e.target.dataset.index || 0);
+        Array.from(dotsWrap.children).forEach((d,i)=> d.classList.toggle('active', i===idx));
+        // also move airplane near center (subtle)
+        moveAirplaneTo(e.target);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  items.forEach(item => mobileObserver.observe(item));
+
+  /* Airplane movement: position near the visible .zigzag-item's media center */
+  function moveAirplaneTo(item){
+    if(!airplane) return;
+    const media = item.querySelector('.media');
+    if(!media) return;
+    const rect = media.getBoundingClientRect();
+    // target coordinates - place plane near top-right corner of media
+    const x = rect.left + rect.width * 0.78;
+    const y = rect.top + rect.height * 0.18;
+    // animate by setting transform translate + rotate
+    airplane.style.left = (x) + 'px';
+    airplane.style.top  = (y) + 'px';
+    airplane.style.opacity = 0.98;
+    // small tilt
+    airplane.style.transform = 'translate(-50%,-50%) rotate(-12deg) scale(1)';
+  }
+
+  // initial airplane placement (center of first item)
+  setTimeout(()=> {
+    if(items[0]) moveAirplaneTo(items[0]);
+  }, 400);
+
+  /* Utility: throttle & debounce */
+  function throttle(fn, wait){ let t=0; return function(...a){ const now=Date.now(); if(now-t>wait){ t=now; fn.apply(this,a); } }; }
+  function debounce(fn, wait){ let t; return function(...a){ clearTimeout(t); t=setTimeout(()=> fn.apply(this,a), wait); }; }
+
+  /* keyboard navigation for desktop */
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+      // find currently most visible item
+      const inView = items.filter(it => it.classList.contains('in-view'));
+      let idx = 0;
+      if(inView.length) idx = Number(inView[0].dataset.index);
+      if(e.key === 'ArrowRight') idx = Math.min(items.length-1, idx+1);
+      if(e.key === 'ArrowLeft') idx = Math.max(0, idx-1);
+      items[idx].scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  });
+
+  /* Accessibility: focus visible when tabbing to buttons inside content */
+  document.querySelectorAll('.btn').forEach(b => {
+    b.addEventListener('focus', (e)=> {
+      const item = b.closest('.zigzag-item');
+      if(item) item.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
