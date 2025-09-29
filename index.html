@@ -262,23 +262,26 @@ width: 25%;
 }
 
 .mainHeading__preTitle {
+  text-align: center;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 2px;
   margin-bottom: 16px;
-  color: #637498;
+  color: #0a2561;
+  font-size: 30px;
 }
 
 .mainHeading__title {
-  text-transform: uppercase;
+  text-align: center;
   font-weight: 200;
   letter-spacing: 2px;
   margin-bottom: 24px;
-  font-size: 40px;
-  color: #637498;
+  font-size: 25px;
+  color: #0a2561;
 }
 
 .mainHeading__description {
+  text-align: center;
   letter-spacing: 0.5px;
   font-size: 16px;
   line-height: 26px;
@@ -348,10 +351,7 @@ width: 25%;
     padding: 20px;
     margin: 90px 0 40px 0;
   }
-  .mainHeading__title {
-    margin-bottom: 16px;
-    font-size: 28px;
-  }
+
   .mainHeading__description {
     font-size: 14px;
   }
@@ -366,7 +366,7 @@ width: 25%;
 /* --- cta button --- */
 .cta {
   padding: 16px 32px;
-  color: #637498;
+  color: #0a2561;
   background-color: transparent;
   border: 1px solid rgba(99, 116, 152, 0.4);
   font-family: "Raleway", sans-serif;
@@ -377,6 +377,10 @@ width: 25%;
   cursor: pointer;
   box-shadow: inset 0px 0px 0px rgba(99, 116, 152, 0.2);
   transition: all 0.4s ease;
+}
+.telegram-wrapper {
+  text-align: center; /* выравнивание по центру */
+  margin-top: 20px;
 }
 
 .cta:hover {
@@ -1405,14 +1409,14 @@ img {
 
 <nav class="mainNav">
 <div class="mainNav__logo">
-  <img src="images/без фона.png" alt="SitoraTours" />
+  <img src="images/без фона.png" alt="SitoraTour" />
 </div>
-   <div class="mainNav__links">
+   <!-- <div class="mainNav__links">
       <a href="" class="mainNav__link">About</a>
       <a href="" class="mainNav__link">Projects</a>
       <a href="" class="mainNav__link">Team</a>
       <a href="" class="mainNav__link">Contacts</a>
-   </div>
+   </div> -->
    <div class="mainNav__icon">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
          <g data-name="Layer 2" fill="#9197AE">
@@ -1435,20 +1439,20 @@ img {
 <header class="mainHeading">
    <div class="mainHeading__content">
       <article class="mainHeading__text">
-         <p class="mainHeading__preTitle">nature</p>
-         <h2 class="mainHeading__title">behind the mountains</h2>
-         <p class="mainHeading__description">
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts.
-         </p>
-         <button class="cta">know more</button>
+         <p class="mainHeading__preTitle">SitoraTour</p>
+         <h2 class="mainHeading__title">Путеводная звезда в мире ярких эмоций!</h2>
+         <!-- <p class="mainHeading__description">
+            Напишите нам, куда и когда вы хотите поехать — и мы подберём для вас лучшие варианты отдыха с учётом всех пожеланий.
+         </p> -->
+         <div class="telegram-wrapper">
+            <a href="https://t.me/SitoraGazizoda" target="_blank">
+              <button class="cta">Telegram</button>
+            </a>
+</div>
       </article>
 
       <figure class="mainHeading__image">
-         <img
-            src="https://images.unsplash.com/photo-1520856707909-75c4048cc858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
-            alt=""
-         />
+    <img src="images/IMG_20250929_105448_491.jpg" alt="Sochi">
       </figure>
    </div>
 </header>
@@ -1463,7 +1467,7 @@ img {
       комфорт — чтобы каждый отпуск стал событием, которое хочется повторить.
     </p>
 
-    <a class="about-cta" href="#tours">Узнать туры</a>
+    <!-- <a class="about-cta" href="#tours">Узнать туры</a> -->
   </div>
 
   <!-- декор: самолёт между текстом и изображением -->
@@ -1852,7 +1856,8 @@ img {
           <div class="col-sm-6 col-md-3 item">
             <h3>📞 Контакты</h3>
             <ul>
-              <li><a href="tel:+992903018410"><i class="fa-solid fa-phone"></i> +992 903-01-84-10</a></li>
+              <li><a href="tel:+992903018410"><i class="fa-solid fa-phone"></i> 🇹🇯 +992 903-01-84-10</a></li>
+              <li><a href="tel:+992903018410"><i class="fa-solid fa-phone"></i> 🇷🇺 +7 (927) 045-44-14</a></li>
               <li><a href="mailto:sitoransor@gmail.com"><i class="fa-solid fa-envelope"></i> sitoransor@gmail.com</a></li>
             </ul>
           </div>
@@ -1866,19 +1871,19 @@ img {
           </div>
           <!-- Текст -->
           <div class="col-md-6 item text">
-            <h3>SitoraTours</h3>
+            <h3>SitoraTour</h3>
             <p>Ваши мечты о путешествиях — ближе, чем вы думаете! 🌍  
               Забронируйте тур уже сегодня и подарите себе новые эмоции ✈️.</p>
           </div>
           <!-- Соцсети -->
           <div class="col item social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/share/1QxsWbNLMM/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@sitoratour0?_t=ZS-907iH4QV5y3&_r=1"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.instagram.com/sitoratours?utm_source=qr&igsh=emd1ZGRuYms5NGN2"><i class="fab fa-instagram"></i></a>
             <a href="https://t.me/SitoraGazizoda"><i class="fab fa-telegram"></i></a>
           </div>
         </div>
-        <p class="copyright">SitoraTours © 2025</p>
+        <p class="copyright">SitoraTour © 2025</p>
       </div>
     </footer>
 
